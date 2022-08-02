@@ -8,8 +8,7 @@ import struct
 import os
 
 def gettime():
-    now = time.strftime('%m-%d %H:%M:%S',time.localtime(time.time()))  
-    return now
+    return time.strftime('%m-%d %H:%M:%S',time.localtime(time.time()))
 
 def function(newsock, address):  
     FILEINFO_SIZE = struct.calcsize('128sI')

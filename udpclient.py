@@ -32,14 +32,14 @@ recv_port = int(sys.argv[1])
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
 sock.bind((recv_ip, recv_port))
 
-print("[+]bind port:" + str(recv_port))
+print(f"[+]bind port:{recv_port}")
 
 while True:
 	i = 0
 	identifier, addr = sock.recvfrom(8192)
-	if(identifier == "Begin Connection id: 3242"):
+	if (identifier == "Begin Connection id: 3242"):
 		i += 1
-		print("Connection " + str(i) + " received")
+		print(f"Connection {i} received")
 		interact(sock, addr)
 		#thread = threading.Thread(target = interact, args = (sock, addr))
 		#thread.start()
